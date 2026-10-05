@@ -1,0 +1,52 @@
+[
+  {
+    "id": "draft",
+    "prompt": "Draft an email to teacher@example.com saying I will be late.",
+    "expected": {
+      "decision": "act",
+      "tool": "email.draft",
+      "arguments": {
+        "to": "teacher@example.com",
+        "body": "I will be late."
+      }
+    }
+  },
+  {
+    "id": "send",
+    "prompt": "Send an email to teacher@example.com saying I will be late.",
+    "expected": {
+      "decision": "confirm",
+      "tool": "",
+      "arguments": {}
+    }
+  },
+  {
+    "id": "ambiguous",
+    "prompt": "Email Alex that I will be late.",
+    "expected": {
+      "decision": "clarify",
+      "tool": "",
+      "arguments": {}
+    }
+  },
+  {
+    "id": "task",
+    "prompt": "Add a task called revise maths",
+    "expected": {
+      "decision": "act",
+      "tool": "tasks.add",
+      "arguments": {
+        "title": "revise maths"
+      }
+    }
+  },
+  {
+    "id": "incomplete",
+    "prompt": "Add a task",
+    "expected": {
+      "decision": "clarify",
+      "tool": "",
+      "arguments": {}
+    }
+  }
+]
